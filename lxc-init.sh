@@ -14,7 +14,7 @@ pushd "$tmp"
 osid=$(awk -F= '$1=="ID" { print $2 ;}' /etc/os-release)
 osver=$(awk -F= '$1=="VERSION_ID" { print $2 ;}' /etc/os-release | sed "s/\"//g")
 zid="$osid$osver"
-wget -O ./zabbix.deb "https://repo.zabbix.com/zabbix/7.0/$osid/pool/main/z/zabbix-release/zabbix-release_latest_7.0+${zid}_all.deb"
+wget -O ./zabbix.deb "https://repo.zabbix.com/zabbix/7.4/release/$osid/pool/main/z/zabbix-release/zabbix-release_latest_7.4+${zid}_all.deb"
 dpkg --force-confnew -i ./zabbix.deb
 
 # patch the created sources.list files to use apt-cacher HTTPS
