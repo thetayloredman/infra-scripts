@@ -1,7 +1,7 @@
 # This script only supports guests using the dpkg package manager (Debian, Ubuntu, and most variants).
 # Must be run as root.
 
-ZABBIX_SERVER="10.0.1.115"
+ZABBIX_SERVER="zabbix.dc.zirco.dev"
 
 echo 'Acquire::http { Proxy "http://apt-cacher.char.internal:3142"; }' > /etc/apt/apt.conf.d/99proxy
 
