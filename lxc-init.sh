@@ -39,7 +39,7 @@ sed -i -e "s/ServerActive=127.0.0.1/ServerActive=$ZABBIX_SERVER/g" /etc/zabbix/z
 sed -i -e "s/Hostname=Zabbix server/Hostname=$host/g" /etc/zabbix/zabbix_agent2.conf
 
 
-cat > /etc/zabbix/zabbix_agent2.d/90-ubuntu-updates.conf << EOF
+cat > /etc/zabbix/zabbix_agent2.d/90-ubuntu-updates.conf << "EOF"
 UserParameter=apt_updates.package,apt-get upgrade -s | grep -c ^Inst
 UserParameter=apt_updates.security,apt-get upgrade -s | grep ^Inst | grep -c security
 UserParameter=dns.nameserver,awk '/^nameserver/ {print $2; exit}' /etc/resolv.conf
